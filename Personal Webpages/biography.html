@@ -2,12 +2,20 @@
 <html lang="en">
     <head>
         <link rel="stylesheet" href="static/css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Biography - Tyler Nielson</title>
     </head>
 
     <body>
-        <div class="flex-photo-container">
-            <div><img src="static/images/ct.jpg" alt="tyler&chey" width="200" height="200"></div>
+        <!-- Taken from the w3schools responsive topnav howto -->
+        <div class="navbar" id="myNavBar">
+            <a class="active" href="#home">Biography</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="resume.html">Resume</a>
+            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="responsiveDesignFunc()">&#9776;</a>
+        </div>
+        <!--<div class="flex-photo-container">
+            <div>1</div>
             <div>2</div>
             <div>3</div>
             <div>4</div>
@@ -48,6 +56,16 @@
                Along with soccer, I really enjoy playing video games in my free time. I don't quite have as much time anymore to play, but when I do, it's usually Overwatch, anything Legend of Zelda, or Fifa
                (go figure...). In general, I'm a pretty simple person. I like to spend time with friends and family, especially the pretty lady in the first two pictures, play video games, watch/read/play soccer
 and code. This website is really the first big project I've taken on and I've enjoyed it thoroughly.
-        </div>
+        </div>-->
+    <script>
+        function responsiveDesignFunc() {
+            var x = document.getElementById("myNavBar");
+            if (x.className === "navbar") {
+                x.className += " responsive";
+            } else {
+                x.className = "navbar";
+            }
+        }
+    </script>
     </body>
 </html>
