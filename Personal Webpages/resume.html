@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="static/css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Resume - Tyler Nielson</title>
+    </head>
+
+    <body>
+        <!-- Taken from the w3schools responsive topnav howto -->
+        <div class="navbar" id="myNavBar">
+            <a href="biography.html">Biography</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a class="active" href="#">Resume</a>
+            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="responsiveDesignFunc()">&#9776;</a>
+        </div>
+        <script>
+            function responsiveDesignFunc() {
+                var x = document.getElementById("myNavBar");
+                if (x.className === "navbar") {
+                    x.className += " responsive";
+                } else {
+                    x.className = "navbar";
+                }
+            }
+        </script>
+    </body>
+</html>
