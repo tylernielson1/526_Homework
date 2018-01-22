@@ -1,0 +1,16 @@
+.flex-photo-container {
+    display: flex;
+    height: 250px;
+    justify-content: center;
+    align-items: center;
+    background-color: #c9f;
+    flex-wrap: wrap;
+}
+
+.flex-photo-container > div {
+    background-color: #f1f1f1;
+    width: 300px;
+    height: 200px;
+    text-align: center;
+    font-size: 30px;
+}
