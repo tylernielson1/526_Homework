@@ -1,20 +1,6 @@
-.flex-photo-container {
-    display: flex;
-    height: 250px;
-    justify-content: center;
-    align-items: center;
-    background-color: #c9f;
-    flex-wrap: wrap;
+* {
+    box-sizing: border-box;
 }
-
-.flex-photo-container > div {
-    background-color: #f1f1f1;
-    width: 300px;
-    height: 200px;
-    text-align: center;
-    font-size: 30px;
-}
-
 /* Taken from the w3schools responsive topnav howto */
 .navbar {
     background-color: #333;
@@ -37,7 +23,7 @@
 }
 
 .active {
-    background-color: #4CAF50;
+    background-color: rgba(0,0,0, 0.5);
     color: white;
 }
 
@@ -65,4 +51,47 @@
         display: block;
         text-align: left;
     }
+}
+
+.myHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    background-color: rgba(0,0,0, 0.5);
+}
+
+.myHeader>div {
+    background-color: rgba(0,0,0, 0.5);
+    width: 239.133px;
+    height: 96.8px;
+    text-align: center;
+    font-size: 20px;
+    color: white
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.filler1 {
+    width: 17.5%;
+    float: left;
+    padding: 15px;
+}
+
+.bio {
+    width: 65%;
+    float: left;
+    padding: 15px;
+    background-color: #f1f1f1;
+    font-size: 18px;
+}
+
+.filler2 {
+    width: 17.5%;
+    float: left;
+    padding: 15px
 }
