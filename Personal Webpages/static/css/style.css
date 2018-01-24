@@ -121,6 +121,8 @@ div.gallery img {
     font-size: 18px;
 }
 
-.portfolio:hover {
-    transform: scale(1.01);
+@media screen and (min-width: 1024px) {
+    .portfolio:hover {
+        transform: scale(1.01);
+    }
 }
