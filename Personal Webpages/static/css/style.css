@@ -107,7 +107,20 @@ div.gallery img {
 .responsiveGallery {
 	padding: 0 6px;
 	float: left;
-	/*width: 24.99999%;*/
 	width: 20%;
 	background-color: #f1f1f1;
+}
+
+/* portfolio.html */
+
+.portfolio {
+    width: 80%;
+    float: left;
+    padding: 15px;
+    background-color: #f1f1f1;
+    font-size: 18px;
+}
+
+.portfolio:hover {
+    transform: scale(1.01);
 }
