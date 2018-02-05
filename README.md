@@ -1,6 +1,6 @@
 # 526_Homework
 ### Storage for all 526 homework assignments throughout the semester.
-##### Homework 1 - Personal Webpages
+#### Homework 1 - Personal Webpages
 Create three HTML files and an associated CSS file to define three pages:
 
 1. A personal biography
@@ -11,7 +11,7 @@ Create three HTML files and an associated CSS file to define three pages:
 
 These should be created to a standard that you would be comfortable showing to a perspective employer.  They should also consist of valid HTML and CSS.  Zip your files an submit them through KSOL.
 
-##### Homework 2 - Simple Server
+#### Homework 2 - Simple Server
 Either expanding on your own in-class work, the example repository (https://github.com/CIS526S18/server-example, or starting from scratch, build a webserver in Node that will serve static files from a public directory and any of its subdirectories.  This server should:
 
 1) Serve files in the public directory when requested, i.e. an HTTP request for /openhouse.html should serve the file public/openhouse.html (note that the virtual path and file path are not identical).
