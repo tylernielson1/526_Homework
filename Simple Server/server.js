@@ -7,22 +7,34 @@ const path = require('path');
 
 // Port definition
 const PORT = 8008;
-const PUBLIC = 'public';
 
-function serveIndex(path, res) {
-    fs.readdir(path, function(err, files) {
+function serveIndex(filePath, res) {
+    console.log("is directory");
+
+    fs.readdir(filePath, function(err, files) {
         
     });
 }
 
 function serveFile(filePath, res) {
+    // This is a pretty general "catch-all" for any error that may occur when determining if a file exists. I believe this is sufficient enough for this assignment.
     fs.stat(filePath, function(err, stats) {
+        
+        if(stats.isDirectory()) {
+            console.log("is directory");
+        }
+
+        if(stats.isFile()) {
+            console.log("is file");
+        }
+        
         if (err) {
             console.error(err);
             res.statusCode = 404;
             res.end("404: file could not be found.");
         }
     });
+
     fs.readFile(filePath, function(err, data) {
         if (err) {
             console.error(err);
@@ -65,7 +77,7 @@ function setTheHeader(extension) {
 }
 
 function handleRequest(req, res) {
-    serveFile(path.join(PUBLIC, req.url), res);
+    serveFile(path.join('public', req.url), res);
 }
 
 var server = http.createServer(handleRequest);
