@@ -31,7 +31,7 @@ function serveIndex(filePath, req, res) {
             var html = "<p>Index of " + filePath + "</p>";
             html += "<ul>";
             html += files.map(function(item) {
-                return "<li><a href='" + req.url + '/' + item + "'>" + item + "</a></li>";
+                return "<li><a href='" /*+ req.url + '/'*/ + item + "'>" + item + "</a></li>";
             }).join("");
             html += "</ul>";
             res.end(html);
@@ -87,6 +87,13 @@ function handleRequest(req, res) {
     // The following checks if the path is a directory, then a file, then if the file even exists and handles each possibility as such.
     fs.stat(path.join('public', req.url), function(err, stats) {
         
+        if (req.url === '/favicon.ico') {
+            res.writeHead(200, {'Content-Type': 'image/x-icon'} );
+            res.end();
+            console.log('favicon requested');
+            return;
+        }
+
         if(stats.isDirectory()) {
             serveIndex(path.join('public', req.url), req, res);
         }
