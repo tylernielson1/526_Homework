@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="static/css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+        <title>Portfolio - Tyler Nielson</title>
+    </head>
+
+    <body>
+        <!-- Taken from the w3schools responsive topnav howto -->
+        <div class="navbar" id="myNavBar">
+            <a href="biography.html">Biography</a>
+            <a class="active" href="#">Portfolio</a>
+            <a href="resume.html">Resume</a>
+            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="responsiveDesignFunc()">&#9776;</a>
+        </div>
+		
+		<header class="myHeader">
+            <div>
+                <h1 style="font-family:'Ubuntu',sans-serif;">
+                    Portfolio
+                </h1>
+            </div>
+        </header>
+
+        <div class="row">
+            <div class="filler">
+            </div>
+            <div class="portfolio">
+                <h2>Paradocs</h2>
+                <p>
+                    Paradocs is the project that I was tasked with building over the summer at my internship with Garmin Aviation.
+                    I was hired as a member of the tools team at Garmin Aviation. This team focuses primarily on building, maintaining, or otherwise implementing internal tools that are utilized by those in the department.
+                    Some examples include a Mock generator for Mock testing with Python, BoostBuild, and Jenkins. When I was hired, there was no central location that the users could view Software documentation at.
+                    That's where I was given the task to build a web application that hosts software documentation that was automatically generated using tools such as Sphinx or Doxygen for software built at Garmin. I built this application using a front end taken from another open source project
+                    called "Host the Docs". The backend was a combination of Node.js for handing the requests and sorting the documentation, a MySQL database for storing information about 
+                    the different pieces of software, and an AWS S3 bucket that would hold the generated documentation. The general idea of the web application is that the application would interface with Jenkins in order to always contain the most up-to-date documentation.
+                    Every time someone pushes to the master branch of a git repository, Jenkins builds the code and runs a suite of tests on the codebase. If the codebase passes the tests, Doxygen or Sphinx would generate the documentation for that codebase, zip the files up, and push them in an HTTP request to my web application.
+                    From there, my web application would push the files to an S3 bucket and display them for users to find and view the most up-to-date software documentation online instead of having to build it themselves.
+                </p>
+            </div>
+            <div class="filler">
+            </div>
+        </div>
+        <div class="row" style="margin-top:10px;">
+            <div class="filler">
+            </div>
+            <div class="portfolio">
+                <h2>Parallelizing Pyxaid</h2>
+                <p><a href="https://github.com/tylernielson1/Parallelizing-Pyxaid">Github repository</a></p>
+                <p>
+                    PYXAID is a software program designed to simulate nonadiabatic molecular dynamics in condensed matter systems. The PYXAID program is currently the only publicly available tool for performing these simulations. It is a single-threaded application that outputs a tremendous amount of files and data. PYXAID is a mixture of Python and C++ code. The time consuming computation and file IO is done in C++. The Python serves more as wrapper to make the program easy to use.
+                </p>
+                <p>
+                    As my final project in CIS 625, I chose to parallelize PYXAID and worked in a group along with Jacob Dokos and Daniel Longfellow. We have implemented a multi-part solution to decrease the runtime of PYXAID. First we added a lightweight timing class that outputs timing data about the C++ runtime. Second we made changes to how the output files were being created. We did not change the output, but made it more efficient. Next, we added in memory arrays to store information over the life of the program, that was originally being stored in files and reassessed. We then moved on to Parallelizing two time consuming sections of computation. This includes computing the phonon spectrum and the propagation of many-electron orbitals. Lastly we got the program running on a ram-disk, resulting in a large speedup due to heavy file IO. All together, we were able to run a small test case in 2:32 seconds. The original version would take around 25 minutes, but vary significantly due to file IO.
+                </p>
+            </div>
+            <div class="filler">
+            </div>
+        </div>
+
+        <div class="row" style="margin-top:10px;">
+            <div class="filler">
+            </div>
+            <div class="portfolio">
+                <h2><a href="http://tylernielson.net">My Website</a></h2>
+                <p><a href="https://github.com/tylernielson1/personal-website">Github repository</a></p>
+                <p>
+                    After working at Garmin and experiencing a little bit of web development, I decided that it was time to create a personal/professional website for myself.
+                    Using Bootstrap as the front end framework, I created this simple website that displays a homepage, a biography, a resume, and has a way to contact me. There are still
+                    a few things missing on the website, such as responsive design on the menu bar, so the menu bar does not work on mobile currently. The contact page also does not work currently. Those are my next tasks when I find the time.
+                </p>
+                <p>
+                    The back end of the website is built in Python and Flask. I did this because I wanted to explore some new technologies and my mentor at Garmin was very fluent in Python and gave me some guidance on how to get things set up.
+                    Overall, the website was a fun project to take on, even if it isn't done yet. I hope that the knowledge from this class will help tidy things up, or maybe it will inspire me to completely remake the website, who knows.
+                </p>
+            </div>
+            <div class="filler">
+            </div>      
+        </div>
+		
+        <script>
+            function responsiveDesignFunc() {
+                var x = document.getElementById("myNavBar");
+                if (x.className === "navbar") {
+                    x.className += " responsive";
+                } else {
+                    x.className = "navbar";
+                }
+            }
+        </script>
+    </body>
+</html>

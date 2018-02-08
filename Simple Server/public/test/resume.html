@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="static/css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+        <title>Resume - Tyler Nielson</title>
+    </head>
+
+    <body>
+        <!-- Taken from the w3schools responsive topnav howto -->
+        <div class="navbar" id="myNavBar">
+            <a href="biography.html">Biography</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a class="active" href="#">Resume</a>
+            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="responsiveDesignFunc()">&#9776;</a>
+        </div>
+		
+		<header class="myHeader">
+            <div>
+                <h1 style="font-family:'Ubuntu',sans-serif;">
+                    Resume
+                </h1>
+            </div>
+        </header>
+
+        <div class="row">
+            <div class="filler">
+            </div>
+            <div class="resume">
+                <h2>Contact Information</h2>
+                <p><b>Address:</b> 1422 Harry Road, Manhattan, KS 66502</p>
+                <p><b>Phone:</b> (913) 486-0198</p>
+                <p><b>E-mail:</b> <a href="mailto:tyler.snielson@gmail.com">tyler.snielson@gmail.com</a></p>
+                <p><b>Website:</b> <a href="http://tylernielson.net">tylernielson.net</a></p>
+            </div>
+            <div class="filler">
+            </div>
+        </div>
+
+        <div class="row" style="margin-top:10px;">
+            <div class="filler">
+            </div>
+            <div class="resume">
+                <h2>Education</h2>
+                <a target="_blank" href="static/images/ksu.png">
+                    <img class="resumePhotos" src="static/images/ksu.png" alt="ksu" width="150" height="150">
+                </a>
+                <p><b><a href="http://www.k-state.edu/">Kansas State University</a>; Manhattan, KS</b></p>
+                <p><i>Bachelor of Science in Software Engineering</i></p>
+                <p><b>3.65/4.00 GPA</b></p>
+                <p>Expected Graduation: May 2018</p>
+            </div>
+            <div class="filler">
+            </div>
+        </div>
+
+        <div class="row" style="margin-top:10px;">
+            <div class="filler">
+            </div>
+            <div class="resume">
+                <h2>Professional Experience</h2>
+                <a target="_blank" href="static/images/garmin.jpg">
+                    <img class="resumePhotos" src="static/images/garmin.jpg" alt="garmin" width="150" height="150">
+                </a>
+                <p><b>Technician</b> - <i><a href="http://housing.k-state.edu/">K-State Department of HDS</a>; Manhattan, KS</i></p>
+                <ul>
+                    <li>Provided assistance to customers through phone, walk-in support, and remotely</li>
+                    <li>Researched and provided multiple solutions to technology requests and problems</li>
+                    <li>Supervised the use of various applications to diagnose and troubleshoot computer issues</li>
+                </ul>
+                <p>December 2017 - Present; August 2015 - March 2017</p>
+                <p><b>Computer Support Technician</b> - <i><a href="https://www.k-state.edu/economics/">K-State Department of Economics</a>; Manhattan, KS</i></p>
+                <ul>
+                    <li>Troubleshoot and perform maintenance on staff desktop computers and printers</li>
+                    <li>Work to maintain and update the Department of Economics webpages</li>
+                </ul>
+                <p>September 2017 - Present</p>
+                <p><b>Software Engineer Intern</b> - <i><a href="https://www.garmin.com/en-US">Garmin</a>; Olathe, KS</i></p>
+                <ul>
+                    <li>Created and deployed a web application that stored and served software documentation from a central location within Garmin Aviation</li>
+                    <li>Worked with a mentor to fix bugs and add features to internal software that simulates input and output data on different aircraft</li>
+                </ul>
+                <p>March 2017 - August 2017</p>
+            </div>
+            <div class="filler">
+            </div>
+        </div>
+
+        <div class="row" style="margin-top:10px;">
+            <div class="filler">
+            </div>
+            <div class="resume">
+                <h2>Skills and Expertise</h2>
+                <a target="_blank" href="static/images/node.png">
+                    <img class="resumePhotos" src="static/images/node.png" alt="node" width="250" height="150">
+                </a>
+                <ul>
+                    <li>C#, Python, JavaScript, Java, SQL, C, C++, HTML, CSS</li>
+                    <li>Windows, Linux, Active Directory</li>
+                    <li>Bootstrap, Flask, Node.js</li>
+                    <li>Git, Github</li>
+                </ul>
+            </div>
+            <div class="filler">
+            </div>
+        </div>
+		
+        <script>
+            function responsiveDesignFunc() {
+                var x = document.getElementById("myNavBar");
+                if (x.className === "navbar") {
+                    x.className += " responsive";
+                } else {
+                    x.className = "navbar";
+                }
+            }
+        </script>
+    </body>
+</html>
