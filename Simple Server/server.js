@@ -31,7 +31,7 @@ function serveIndex(filePath, req, res) {
             var html = "<p>Index of " + filePath + "</p>";
             html += "<ul>";
             html += files.map(function(item) {
-                return "<li><a href='" /*+ req.url + '/'*/ + item + "'>" + item + "</a></li>";
+                return "<li><a href='" + req.url + '/' + item + "'>" + item + "</a></li>";
             }).join("");
             html += "</ul>";
             res.end(html);
