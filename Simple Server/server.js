@@ -21,7 +21,7 @@ function serveRoot(filePath, req, res) {
         if(err) {
             console.error(err);
             res.statusCode = 500;
-            res.end("Server ERror: Could not read file.");
+            res.end("Server Error: Could not read file.");
         }
         var html = "<p>Index of " + filePath + "</p>";
         html += "<ul>";
