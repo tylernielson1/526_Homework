@@ -52,7 +52,7 @@ function serveIndex(filePath, req, res) {
             console.error(err);
             res.statusCode = 500;
             res.end("Server Error: Could not read file.");
-        } 
+        }
         for (let item of files) {
             console.log(item);
             if (item === 'index.html') {
@@ -143,7 +143,13 @@ function handleRequest(req, res) {
     // This is a pretty general "catch-all" for any error that may occur when determining if a file exists. I believe this is sufficient enough for this assignment.
     // The following checks if the path is a directory, then a file, then if the file even exists and handles each possibility as such.
     fs.stat(path.join('public', req.url), function(err, stats) {
-        
+        if (err) {
+            console.error(err);
+            res.statusCode = 404;
+            res.end("404: file could not be found.");
+            return;
+        }
+
         if (req.url === '/favicon.ico') {
             res.writeHead(200, {'Content-Type': 'image/x-icon'} );
             res.end();
@@ -158,12 +164,7 @@ function handleRequest(req, res) {
         if(stats.isFile()) {
             serveFile(path.join('public', req.url), res);
         }
-        
-        if (err) {
-            console.error(err);
-            res.statusCode = 404;
-            res.end("404: file could not be found.");
-        }
+    
     });
 }
 
